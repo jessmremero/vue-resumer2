@@ -34,14 +34,33 @@ export default {
   flex-direction:column;
   height:100vh;
 }
+.icon {
+    
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+    }
+.topbar{
+box-shadow:0 0 3px hsla(0,0,0,0.5);
+z-index:1;
+}
 main {
 display:flex;
 flex:1;
+background:#ddd;
    > .editor{
-width:20em;
+width:30em;
+margin:16px 8px 16px 16px;
+background:white;
+box-shadow:0 0 3px hsla(0,0,0,0.5);
+border-radius:4px;
+overflow:hidden;
 }
    > .preview{
 flex:1;
+margin:16px 16px 16px 8px;
+background:white;
+box-shadow:0 0 3px hsla(0,0,0,0.5);
    }
 }
 </style>

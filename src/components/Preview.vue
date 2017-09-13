@@ -5,6 +5,6 @@ i am preview
 </template>
 <style>
 #preview{
-background:yellow;
+border:1px solid black;
 }
 </style>
