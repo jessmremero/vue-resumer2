@@ -1,12 +1,14 @@
 <template>
-  <div id="app">
-     <Topbar class="topbar" />
+  <div id="app" v-bind:class="{ previewMode:previewMode}">
+     <Topbar class="topbar" v-on:preview="preview" />
 	 <main>
-       <Editor class="editor" />
-       <Preview  class="preview"/>
+       <Editor v-bind:resume="resume" class="editor" />
+       <Preview v-bind:resume="resume" class="preview"/>
 	 </main>
+	 <el-button id="exitPreview" v-on:click="exitPreview">exit</el-button>
   </div>
 </template>
+
 
 <script>
 
@@ -14,10 +16,33 @@ import Topbar from './components/Topbar'
 import Editor from './components/Editor'
 import Preview from './components/Preview'
 export default {
-  components: { 
-	Topbar,
-	Editor,
-	Preview
+  data(){
+     return{
+	 previewMode: false,
+	 resume:{
+	  profile:{name:"",birth:"",city:""},
+      workHistory:[{company:'',content:''},],
+      studyHistory:[{school:'',duration:'',degree:''}],
+      projectHistory:[{name:'',content:'',skill:''}],
+      rewardHistory:[{name:''}], 
+      contact:{QQ:"",wechat:"",email:"",telephone:""},   	  
+	   }
+	 }
+  },
+  methods:{
+    exitPreview(){
+	  this.previewMode = false
+	},
+    preview(){
+	  this.previewMode = true
+	}
+  },
+  components: { Topbar,Editor,Preview
+  },
+  created(){
+  this.$on('preview',()=>{
+  alert('1')
+  })
   }
 }
 </script>
@@ -54,7 +79,7 @@ margin:16px 8px 16px 16px;
 background:white;
 box-shadow:0 0 3px hsla(0,0,0,0.5);
 border-radius:4px;
-overflow:hidden;
+overflow:auto;
 }
    > .preview{
 flex:1;
@@ -62,5 +87,25 @@ margin:16px 16px 16px 8px;
 background:white;
 box-shadow:0 0 3px hsla(0,0,0,0.5);
    }
+}
+.previewMode > #topbar{
+display:none;
+}
+.previewMode  #editor{
+display:none;
+}
+.previewMode  #preview{
+max-width:800px;
+margin:32px auto;
+padding:16px;
+}
+#exitPreview{
+display:none;
+}
+.previewMode #exitPreview{
+display:inline-block;
+position:fixed;
+right:32px;
+bottom:16px;
 }
 </style>
