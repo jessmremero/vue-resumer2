@@ -1,7 +1,7 @@
 <template>
   <div id="app" v-bind:class="{ previewMode:previewMode}">
      <Topbar class="topbar" v-on:preview="preview" />
-	 <main>
+	 <main id="mainm">
        <Editor v-bind:resume="resume" class="editor" />
        <Preview v-bind:resume="resume" class="preview"/>
 	 </main>
@@ -69,7 +69,7 @@ export default {
 box-shadow:0 0 3px hsla(0,0,0,0.5);
 z-index:1;
 }
-#app main {
+#mainm {
 display:flex;
 flex:1;
 background:#ddd;
