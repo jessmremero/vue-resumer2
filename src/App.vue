@@ -11,7 +11,6 @@
 
 
 <script>
-
 import Topbar from './components/Topbar'
 import Editor from './components/Editor'
 import Preview from './components/Preview'
@@ -69,7 +68,7 @@ export default {
 box-shadow:0 0 3px hsla(0,0,0,0.5);
 z-index:1;
 }
-#app main {
+#mainm {
 display:flex;
 flex:1;
 background:#ddd;
@@ -88,20 +87,25 @@ background:white;
 box-shadow:0 0 3px hsla(0,0,0,0.5);
    }
 }
+
 .previewMode > #topbar{
 display:none;
 }
+
 .previewMode  #editor{
 display:none;
 }
+
 .previewMode  #preview{
 max-width:800px;
 margin:32px auto;
 padding:16px;
 }
+
 #exitPreview{
 display:none;
 }
+
 .previewMode #exitPreview{
 display:inline-block;
 position:fixed;

@@ -95,24 +95,14 @@ display:flex;
        height:100%;
 	   overflow:auto;
 	   flex:1;
-       >li {
-        display:none;
-        &.active2{
-	    display:block;
-	    padding:32px;
-		
-	  	 >form{
-	       width:200px; 
-		 
-		     >div{
-		   position:relative;
-		       >.el-icon-delete{
-		   position:absolute;
-		   right:0;
-		   bottom:0;//Î´ÉúÐ§//
-		    }  
-		   }
-		   
+        >li {
+          display:none;
+            &.active2{
+	          display:block;
+	          padding:32px;	
+	  	      >form{
+	           min-width:330px; 
+			    	   
 		}
 	 }
    } 
