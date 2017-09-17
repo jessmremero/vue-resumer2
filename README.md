@@ -1,3 +1,9 @@
+目前存在bug
+1、工作经历、项目经历不能实现左边写右边显示
+2、在GitHub预览editor区域是display:block，导致布局错误
+
+
+
 # vue-resumer2
 
 > A Vue.js project
